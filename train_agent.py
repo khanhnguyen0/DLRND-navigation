@@ -4,6 +4,7 @@ import numpy as np
 from collections import namedtuple, deque
 from agent import Agent
 import matplotlib.pyplot as plt
+from settings import BANANA_FILE_PATH
 
 def dqn(env, agent, brain_name,  n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
     """Deep Q-Learning.
@@ -48,7 +49,7 @@ def dqn(env, agent, brain_name,  n_episodes=2000, max_t=1000, eps_start=1.0, eps
 
 
 if __name__ == "__main__":
-    env = UnityEnvironment(file_name="./data/Banana.app")
+    env = UnityEnvironment(file_name=BANANA_FILE_PATH)
     brain_name = env.brain_names[0]
     brain = env.brains[brain_name]
     # reset the environment
