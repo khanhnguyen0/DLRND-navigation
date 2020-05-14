@@ -50,6 +50,13 @@ class Agent():
                 experiences = self.memory.sample()
                 self.learn(experiences, GAMMA)
 
+    def save_model(self, checkpoint_path="./checkpoints/checkpoint.pt"):
+        torch.save(self.qnetwork_local.state_dict(), checkpoint_path)
+
+    def load_model(self, checkpoint_path="./checkpoints/checkpoint.pt"):
+        self.qnetwork_local.load_state_dict(torch.load(checkpoint_path))
+        self.qnetwork_target.load_state_dict(torch.load(checkpoint_path))
+
     def act(self, state, eps=0.):
         """Returns actions for given state as per current policy.
         
