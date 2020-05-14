@@ -54,6 +54,10 @@ $ pip3 install -r requirements.txt
 ```
 
 #### 3. Download Unity's Banana environment
+Create `data` folder in the project root
+```
+$ mkdir data
+```
 You need only select the environment that matches your operating system:  
 * Linux: [Click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
 * Mac OSX: [Click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
@@ -72,4 +76,7 @@ To modify the hyper parameters for the Q network and the training process, updat
 
 ### Results
 
-The agent solved the game successfully after 450 episodes using fixed target Q network. For more details, please check out the notebook `Report.ipynb`
+The agent solved the game successfully after 450 episodes using fixed target Q network. For more details, please check out the notebook `Report.ipynb`. The notebook can be opened after running Jupyter lab in the project root directory.
+```
+$ jupyter lab
+```
