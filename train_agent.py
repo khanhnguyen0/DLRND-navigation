@@ -45,6 +45,7 @@ def dqn(env, agent, brain_name,  n_episodes=2000, max_t=1000, eps_start=1.0, eps
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(i_episode-100, np.mean(scores_window)))
             agent.save_model()
             break
+    env.close()
     return scores
 
 
