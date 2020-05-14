@@ -19,13 +19,11 @@ class QNetwork(nn.Module):
         self.dropout = nn.Dropout(p=dropout)
         linear_layer_sizes = linear_sizes.split(",")
         linear_layers = [nn.Linear(state_size, int(linear_layer_sizes[0])), self.relu, self.dropout]
-        print(linear_layer_sizes[1:])
         for i in range(1, len(linear_layer_sizes)):
             linear_layer_size = linear_layer_sizes[i]
             linear_layer = nn.Linear(int(linear_layer_sizes[i-1]), int(linear_layer_size))
             linear_layers.extend([linear_layer, self.relu, self.dropout])
         self.linear = nn.Sequential(*linear_layers)
-        print(linear_layers)
         self.output = nn.Linear(int(linear_layer_sizes[-1]), action_size)
 
     def forward(self, state):
